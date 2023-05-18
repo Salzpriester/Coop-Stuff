@@ -7,8 +7,6 @@ public class ToolHolder : MonoBehaviour
 
     private Tool _previousTool;
 
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -18,7 +16,7 @@ public class ToolHolder : MonoBehaviour
 
         if(_tool != _previousTool)
         {
-            GetComponent<MeshFilter>().mesh = _tool.Model;
+            _toolGameObject.GetComponent<MeshFilter>().mesh = _tool.Model;
         }
 
         _previousTool = _tool;
