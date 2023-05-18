@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71071015d7f952347a7cf903a9ea3b5e, type: 3}
   m_Name: Pickaxe
   m_EditorClassIdentifier: 
+  MiningSpeed: 1
+  Range: 2

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9141ede60a280146859cb32f7ffb1fc, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
+  MiningSpeed: 1
+  Range: 2
