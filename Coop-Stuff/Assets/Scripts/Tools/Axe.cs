@@ -7,17 +7,18 @@ public class Axe : Tool
     {
         axe.transform.GetComponent<Animator>().Play("AxeSwing");
 
-        if(Physics.Raycast(axe.transform.parent.position, axe.transform.parent.forward, out RaycastHit hit))
+        if(Physics.Raycast(axe.transform.parent.parent.position, axe.transform.parent.parent.forward, out RaycastHit hit))
         {
+            if(hit.collider.transform.TryGetComponent(out Enemy enemy))
+            {
+                enemy.GetDamage(5);
+            }
+
+
             if(hit.transform.CompareTag("Tree") && Vector3.Distance(hit.transform.position, axe.transform.position) <= Range)
             {
                 hit.transform.gameObject.SetActive(false);
             }
-            if (hit.transform.CompareTag("Enemy") && Vector3.Distance(hit.transform.position, axe.transform.position) <= Range)
-            {
-                hit.transform.GetComponent<Enemy>().GetDamage(5);
-            }
         }
-        
     }
 }
