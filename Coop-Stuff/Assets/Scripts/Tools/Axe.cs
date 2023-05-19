@@ -13,6 +13,10 @@ public class Axe : Tool
             {
                 hit.transform.gameObject.SetActive(false);
             }
+            if (hit.transform.CompareTag("Enemy") && Vector3.Distance(hit.transform.position, axe.transform.position) <= Range)
+            {
+                hit.transform.GetComponent<Enemy>().GetDamage(5);
+            }
         }
         
     }

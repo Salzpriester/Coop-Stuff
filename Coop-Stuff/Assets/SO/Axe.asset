@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: {fileID: -5495902117074765545, guid: b6dd0fe349d74004a85822cc583357d6, type: 3}
   MiningSpeed: 1
-  Range: 2
+  Range: 5

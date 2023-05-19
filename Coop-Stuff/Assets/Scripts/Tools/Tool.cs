@@ -8,6 +8,6 @@ public class Tool : ScriptableObject
 
     public virtual void LeftClickAction(GameObject tool)
     {
-
+      
     }
 }
