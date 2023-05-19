@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _life;
     [SerializeField] private GameObject _player;
     [SerializeField] private float _range;
-    
+    [SerializeField] private float _attackrange;
+    [SerializeField] private float _damage;
+
     private Rigidbody _rigidbody;
 
 
@@ -32,6 +34,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Vector3.Distance(gameObject.transform.position, _player.transform.position) <= _attackrange) 
+        {
+            
+        }
 
-       
+
+
+
+    }
+
 }
