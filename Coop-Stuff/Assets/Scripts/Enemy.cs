@@ -29,8 +29,13 @@ public class Enemy : MonoBehaviour
         {
             Vector3 direction = _player.transform.position - gameObject.transform.position;
             direction.Normalize();
-            transform.LookAt(_player.transform.position);
-            _rigidbody.AddForce(direction * _speed);
+            transform.position += _speed * Time.deltaTime * transform.forward;
+
+
+            var lookPos = _player.transform.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 4);
 
         }
     }
@@ -47,7 +52,7 @@ public class Enemy : MonoBehaviour
     public void GetDamage(int damage)
     {
         _health -= damage;
-        Debug.Log(_health+"from Enemy");
+        Debug.Log(_health + "from Enemy");
         CheckIfDead();
 
     }
