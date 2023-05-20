@@ -16,7 +16,7 @@ public class Axe : Tool
 
             if(hit.transform.TryGetComponent(out RessourceSource source) && source.RessourceType == RessourceType.Wood)
             {
-                source.Harvest(5);
+                source.Harvest(5, TimeWhenToolActuallyHits);
             }
         }
     }

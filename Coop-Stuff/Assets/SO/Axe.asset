@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   Model: {fileID: -8287839383430266118, guid: 4900c3797e39cce48b6185b1545946f2, type: 3}
-  MiningSpeed: 1
+  TimeBetweenHits: 1
   Range: 5
+  TimeWhenToolActuallyHits: 0.3
