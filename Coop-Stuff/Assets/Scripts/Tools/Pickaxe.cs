@@ -7,11 +7,11 @@ public class Pickaxe : Tool
     {
         pickaxe.transform.GetComponent<Animator>().Play("AxeSwing");
 
-        if (Physics.Raycast(pickaxe.transform.parent.position, pickaxe.transform.parent.forward, out RaycastHit hit))
+        if (Physics.Raycast(pickaxe.transform.parent.position, pickaxe.transform.parent.forward, out RaycastHit hit) && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)
         {
-            if (hit.transform.CompareTag("Rock") && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)
+            if (hit.transform.TryGetComponent(out RessourceSource source) && source.RessourceType == RessourceType.Rock)
             {
-                hit.transform.gameObject.SetActive(false);
+                source.Harvest(5);
             }
         }
     }
