@@ -4,16 +4,23 @@ using UnityEngine;
 public class RessourceSource : MonoBehaviour
 {
     [Header("Parameters")]
-    public RessourceType RessourceType;
+    [SerializeField] private RessourceType RessourceType;
     [SerializeField] private int _amountOfRessourcesLeft;
+    [SerializeField] private GameObject _onHitParticle;
 
-    public void Harvest(int Amount, float Delay)
+    public RessourceType GetRessourceType() => RessourceType;
+    public GameObject GetOnHitParticle() => _onHitParticle;
+
+
+
+
+    public void Harvest(int Amount, float Delay, Vector3 hitPoint)
     {
-        StartCoroutine(DelayTheHarvest(Amount, Delay));
+        StartCoroutine(DelayTheHarvest(Amount, Delay, hitPoint));
     }
 
 
-    IEnumerator DelayTheHarvest(int Amount, float Delay)
+    IEnumerator DelayTheHarvest(int Amount, float Delay, Vector3 hitPoint)
     {
         yield return new WaitForSeconds(Delay);
 
@@ -22,6 +29,8 @@ public class RessourceSource : MonoBehaviour
         _amountOfRessourcesLeft -= Amount;
 
         RessourceManager.Instance.IncreaseRessource(RessourceType, Amount);
+
+        Instantiate(_onHitParticle, hitPoint, Quaternion.identity);
 
         if (_amountOfRessourcesLeft <= 0)
         {

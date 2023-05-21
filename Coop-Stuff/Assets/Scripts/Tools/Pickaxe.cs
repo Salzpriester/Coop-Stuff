@@ -7,13 +7,13 @@ public class Pickaxe : Tool
     {
         pickaxe.transform.GetComponent<Animator>().Play("Swing");
 
-        if (Physics.Raycast(pickaxe.transform.parent.parent.position, pickaxe.transform.parent.parent.forward, out RaycastHit hit) && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)
-        {
-            if (hit.transform.TryGetComponent(out RessourceSource source) && source.RessourceType == RessourceType.Rock)
-            {
-                Debug.Log("Raycasted");
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                source.Harvest(5, TimeWhenToolActuallyHits);
+        if (Physics.Raycast(ray, out RaycastHit hit) && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)
+        {
+            if (hit.transform.TryGetComponent(out RessourceSource source) && source.GetRessourceType() == RessourceType.Rock)
+            {
+                source.Harvest(5, TimeWhenToolActuallyHits, hit.point);
             }
         }
     }

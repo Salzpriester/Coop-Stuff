@@ -16,4 +16,4 @@ MonoBehaviour:
   Controller: {fileID: 9100000, guid: 801d5564fd7fe9e478d3138a0a946303, type: 2}
   TimeBetweenHits: 1
   Range: 5
-  TimeWhenToolActuallyHits: 0.22
+  TimeWhenToolActuallyHits: 0.3

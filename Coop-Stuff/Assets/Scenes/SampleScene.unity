@@ -132,8 +132,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2965567773152442308, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
+      propertyPath: _onHitParticle
+      value: 
+      objectReference: {fileID: 194062, guid: 2fa76ae0f6b8e3e418b8463161fe9414, type: 3}
+    - target: {fileID: 2965567773152442308, guid: f02116c209ecd9e488fc4d2cd8996133,
+        type: 3}
       propertyPath: _amountOfRessourcesLeft
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5443217996720745930, guid: f02116c209ecd9e488fc4d2cd8996133,
         type: 3}
@@ -2160,6 +2165,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7864700636845172665, guid: e289bf5debb17f6459818c207d781953,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 1765147647}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e289bf5debb17f6459818c207d781953, type: 3}
 --- !u!4 &1171587463 stripped
@@ -2315,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999996
       objectReference: {fileID: 0}
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb,
         type: 3}
@@ -2330,7 +2340,7 @@ PrefabInstance:
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.0009135162
       objectReference: {fileID: 0}
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb,
         type: 3}
@@ -2345,7 +2355,7 @@ PrefabInstance:
     - target: {fileID: 1686021177305034388, guid: ebee340de387f334f9ac44e044abd8fb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebee340de387f334f9ac44e044abd8fb, type: 3}
@@ -2562,6 +2572,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!23 &1765147647 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5485172833262161395, guid: e289bf5debb17f6459818c207d781953,
+    type: 3}
+  m_PrefabInstance: {fileID: 1160447393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771220969
 GameObject:
   m_ObjectHideFlags: 0
