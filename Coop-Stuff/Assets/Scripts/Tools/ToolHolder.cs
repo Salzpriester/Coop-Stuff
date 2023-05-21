@@ -21,6 +21,7 @@ public class ToolHolder : MonoBehaviour
         if(_tool != _previousTool)
         {
             _toolGameObject.GetComponent<MeshFilter>().mesh = _tool.Model;
+            _toolGameObject.GetComponent<Animator>().runtimeAnimatorController = _tool.Controller;
         }
 
         _hitDelay -= Time.deltaTime;

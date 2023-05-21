@@ -5,7 +5,7 @@ public class Axe : Tool
 {
     public override void LeftClickAction(GameObject axe)
     {
-        axe.transform.GetComponent<Animator>().Play("AxeSwing");
+        axe.transform.GetComponent<Animator>().Play("Swing");
 
         if(Physics.Raycast(axe.transform.parent.parent.position, axe.transform.parent.parent.forward, out RaycastHit hit) && Vector3.Distance(hit.transform.position, axe.transform.position) <= Range)
         {

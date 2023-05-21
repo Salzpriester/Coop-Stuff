@@ -5,7 +5,7 @@ public class Pickaxe : Tool
 {
     public override void LeftClickAction(GameObject pickaxe)
     {
-        pickaxe.transform.GetComponent<Animator>().Play("AxeSwing");
+        pickaxe.transform.GetComponent<Animator>().Play("Swing");
 
         if (Physics.Raycast(pickaxe.transform.parent.parent.position, pickaxe.transform.parent.parent.forward, out RaycastHit hit) && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)
         {
