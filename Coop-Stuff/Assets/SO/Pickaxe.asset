@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: {fileID: 4987632398419711469, guid: c5615e48c9c7fcf4eb298ae7a9ad1d39, type: 3}
   Controller: {fileID: 9100000, guid: 31cf800e32c8efd4594f0206214d1d0d, type: 2}
-  TimeBetweenHits: 1.5
-  Range: 2
+  TimeBetweenHits: 1
+  Range: 3
   TimeWhenToolActuallyHits: 0.3

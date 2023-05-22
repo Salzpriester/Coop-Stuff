@@ -2590,8 +2590,8 @@ GameObject:
   - component: {fileID: 1771220972}
   - component: {fileID: 1771220971}
   - component: {fileID: 1771220970}
-  - component: {fileID: 1771220975}
   - component: {fileID: 1771220974}
+  - component: {fileID: 1771220975}
   - component: {fileID: 1771220976}
   - component: {fileID: 1771220977}
   m_Layer: 0
@@ -2732,8 +2732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b768e20733f86a4eb5888fc91ffe6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tool: {fileID: 11400000, guid: f2d194febc293a849bef131bd0dad7c8, type: 2}
   _toolGameObject: {fileID: 1755184048}
+  _tools:
+  - {fileID: 11400000, guid: 2e9a3d37463f716448795304aadbf49c, type: 2}
+  - {fileID: 11400000, guid: f2d194febc293a849bef131bd0dad7c8, type: 2}
+  _currentTool: {fileID: 0}
 --- !u!114 &1771220977
 MonoBehaviour:
   m_ObjectHideFlags: 0
