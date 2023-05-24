@@ -5,10 +5,6 @@ public class Pickaxe : Tool
 {
     public override void LeftClickAction(GameObject pickaxe)
     {
-        pickaxe.transform.GetComponent<Animator>().Play("Swing");
-
-        Debug.Log(pickaxe.transform.GetComponent<Animator>().avatar);
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit) && Vector3.Distance(hit.transform.position, pickaxe.transform.position) <= Range)

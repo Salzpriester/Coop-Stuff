@@ -43,14 +43,29 @@ public class ToolHolder : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && _hitDelay <= 0)
         {
             _currentTool.LeftClickAction(_toolGameObject);
+            _toolAnimator.Play("Swing");
             _hitDelay = _currentTool.TimeBetweenHits;
         }
 
         _hitDelay -= Time.deltaTime;
 
-        ToolIndex += (int) Input.mouseScrollDelta.y;
-    }
+        if ((int)Input.mouseScrollDelta.y != 0)
+        {
+            ToolIndex += (int)Input.mouseScrollDelta.y;
+        }
 
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit) && Vector3.Distance(gameObject.transform.position, hit.transform.position) <= 5)
+            {
+                if(hit.transform.TryGetComponent(out IInteractable interactable))
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+    }
 
 
     private void OnToolIndexChange()
@@ -70,6 +85,6 @@ public class ToolHolder : MonoBehaviour
         _currentTool = _tools[ToolIndex];
         _toolMeshFilter.mesh = _currentTool.Model;
         _toolAnimator.runtimeAnimatorController = _currentTool.Controller;
-        _toolAnimator.Play("");
+        _toolAnimator.Play("PullOut");
     }
 }

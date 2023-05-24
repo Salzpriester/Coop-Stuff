@@ -5,8 +5,6 @@ public class Axe : Tool
 {
     public override void LeftClickAction(GameObject axe)
     {
-        axe.transform.GetComponent<Animator>().Play("Swing");
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit) && Vector3.Distance(hit.transform.position, axe.transform.position) <= Range)

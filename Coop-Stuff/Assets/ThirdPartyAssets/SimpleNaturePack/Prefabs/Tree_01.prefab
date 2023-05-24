@@ -252,3 +252,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RessourceType: 1
   _amountOfRessourcesLeft: 15
+  _onHitParticle: {fileID: 194062, guid: 0b057ac7345b2cd41802444f6a78a9ea, type: 3}
