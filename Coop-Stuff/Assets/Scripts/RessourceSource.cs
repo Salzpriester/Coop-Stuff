@@ -34,7 +34,7 @@ public class RessourceSource : MonoBehaviour
 
         if (_amountOfRessourcesLeft <= 0)
         {
-            if(transform.parent != null)
+            if(transform.parent.parent != null)
             {
                 Destroy(transform.parent.gameObject);
             }
